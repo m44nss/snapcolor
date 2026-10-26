@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111318">
+    <meta name="description"
+        content="Generate beautiful color palettes, lock your favorite colors, and copy HEX codes for your next design project.">
+    <title>SnapColor — Color Palette Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="app">
+        <header class="navbar">
+            <a class="brand" href="#" aria-label="SnapColor home">
+                <span class="brand-icon">◉</span> Snap<span>Color</span>
+            </a>
+            <span class="top-label">COLOR STUDIO / 001</span>
+        </header>
+
+        <section class="hero">
+            <p class="eyebrow">A LITTLE COLOR IN YOUR DAY</p>
+            <h1>Find your next <span>favorite.</span></h1>
+            <p class="subtitle">Generate a palette, lock the colors you love, and let inspiration do the rest.</p>
+        </section>
+
+        <section class="toolbar" aria-label="Palette controls">
+            <div>
+                <p class="toolbar-label">YOUR PALETTE</p>
+                <p class="toolbar-hint">Tap a HEX code to copy it.</p>
+            </div>
+            <div class="actions">
+                <button id="export-btn" class="secondary-btn" type="button">Export CSS</button>
+                <button id="generate-btn" class="primary-btn" type="button">
+                    <span aria-hidden="true">↻</span> Generate palette
+                </button>
+            </div>
+        </section>
+
+        <section id="palette" class="palette" aria-label="Generated color palette">
+            <article class="color-card">
+                <div class="swatch" style="background:#F4A261"></div>
+                <div class="color-info">
+                    <span class="color-name">Apricot</span>
+                    <button class="hex-button" type="button">#F4A261</button>
+                    <button class="lock-button" type="button" aria-label="Lock color">♧ Lock</button>
+                </div>
+            </article>
+            <article class="color-card">
+                <div class="swatch" style="background:#E76F51"></div>
+                <div class="color-info">
+                    <span class="color-name">Terracotta</span>
+                    <button class="hex-button" type="button">#E76F51</button>
+                    <button class="lock-button" type="button" aria-label="Lock color">♧ Lock</button>
+                </div>
+            </article>
+            <article class="color-card">
+                <div class="swatch" style="background:#2A9D8F"></div>
+                <div class="color-info">
+                    <span class="color-name">Teal</span>
+                    <button class="hex-button" type="button">#2A9D8F</button>
+                    <button class="lock-button" type="button" aria-label="Lock color">♧ Lock</button>
+                </div>
+            </article>
+            <article class="color-card">
+                <div class="swatch" style="background:#264653"></div>
+                <div class="color-info">
+                    <span class="color-name">Deep Ocean</span>
+                    <button class="hex-button" type="button">#264653</button>
+                    <button class="lock-button" type="button" aria-label="Lock color">♧ Lock</button>
+                </div>
+            </article>
+            <article class="color-card">
+                <div class="swatch" style="background:#E9C46A"></div>
+                <div class="color-info">
+                    <span class="color-name">Marigold</span>
+                    <button class="hex-button" type="button">#E9C46A</button>
+                    <button class="lock-button" type="button" aria-label="Lock color">♧ Lock</button>
+                </div>
+            </article>
+        </section>
+
+        <p id="status" class="status" role="status" aria-live="polite">
+            Ready when you are. Press Space to generate a new palette.
+        </p>
+
+        <section class="tip">
+            <span class="tip-icon">✳</span>
+            <div>
+                <strong>Make it yours</strong>
+                <p>Lock colors you love, then generate again to explore new combinations.</p>
+            </div>
+        </section>
+
+        <footer>
+            <span>SnapColor © 2026</span>
+            <span>Made for curious creatives.</span>
+        </footer>
+    </main>
+
+    <dialog id="export-dialog" class="export-dialog">
+        <div class="dialog-header">
+            <h2>Your CSS palette</h2>
+            <button id="close-dialog" class="close-btn" type="button" aria-label="Close">✕</button>
+        </div>
+        <p>Copy these CSS custom properties into your project.</p>
+        <textarea id="css-output" rows="9" readonly aria-label="Exported CSS"></textarea>
+        <button id="copy-css-btn" class="primary-btn full-btn" type="button">Copy CSS</button>
+    </dialog>
+</body>
+
+</html>
